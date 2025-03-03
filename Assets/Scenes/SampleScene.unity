@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d291217804ffc664dbe93bfcebbf1330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 25
+  _damagePlayer: 25
 --- !u!114 &173178515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,8 +1127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealthPoints: 50
   _currentHealth: 0
-  _healthText: {fileID: 0}
-  _isPlayer: 0
 --- !u!54 &173178516
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8938,6 +8936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6680303c9d214c1429392f6ac76d1748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hpUI: {fileID: 1401312662}
 --- !u!1 &2002537397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ff0e173ad70f9f4d8f5165650b0cbe1, type: 3}

@@ -1,14 +1,9 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float _maxHealthPoints;
-    [SerializeField] private float _currentHealth;
-
-    [SerializeField] Text _healthText;
-    [SerializeField] private bool _isPlayer;
+    [SerializeField] private float _currentHealth;    
 
     private bool _isAlive;
 
@@ -21,10 +16,7 @@ public class Health : MonoBehaviour
     private void Update()
     {
         if (!_isAlive)
-            Destroy(gameObject);
-
-        if (_isPlayer)
-            _healthText.text = _currentHealth.ToString();
+            Destroy(gameObject);            
     }
 
     public void TakeDamage(float damage)
@@ -39,5 +31,10 @@ public class Health : MonoBehaviour
             _isAlive = true;
         else
             _isAlive = false;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 }
