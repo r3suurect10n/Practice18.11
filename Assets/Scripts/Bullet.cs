@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _damage;
+    private Rigidbody currentBulletVelocity;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
-        if (other.GetComponent<Health>() && other.GetComponent<Enemy>())
-        {
-            other.GetComponent<Health>().TakeDamage(_damage);
-        }
-        Destroy(gameObject);
+        currentBulletVelocity = GetComponent<Rigidbody>();
     }
+
+    public void Initialize(float firePower, float direction)
+    {
+        currentBulletVelocity.linearVelocity = new Vector2(firePower * Mathf.Sign(direction), currentBulletVelocity.linearVelocity.y);
+    }           
 }

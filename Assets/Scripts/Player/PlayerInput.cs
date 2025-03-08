@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
         bool isJump = Input.GetButtonDown("Jump");
 
         if (Input.GetButtonDown("Fire1"))
-            _shooter.Shoot(horizontalDirection);
+            _shooter.Shoot();
 
         _playerMovement.Move(horizontalDirection, isJump);
     }

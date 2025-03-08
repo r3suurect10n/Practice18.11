@@ -1,55 +1,60 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement variables")]
     [SerializeField] private float _jumpPower;
-    [SerializeField] private float _movementSpeed;
-    [SerializeField] private bool _isGrounded;
+    [SerializeField] private float _movementSpeed;    
 
     [Header("Settings")]
-    [SerializeField] private Rigidbody _rb;
-    [SerializeField] private LayerMask _groundLayer;    
-    [SerializeField] private Transform _groundCheck; 
-    [SerializeField] private float _checkRadius;
-    [SerializeField] private AnimationCurve _curve;
+    [SerializeField] private GroundChecker _groundChecker;
+    [SerializeField] private Rigidbody _rb;    
+    [SerializeField] private AnimationCurve _curve;    
+
+    public float Direction {  get; private set; }
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-    }
-
-    private void Update()
-    {
-        _isGrounded = Physics.CheckSphere(_groundCheck.position, _checkRadius, _groundLayer);   
-    }   
+        _groundChecker = GetComponent<GroundChecker>();
+        Direction = 1;
+    }     
 
     public void Move(float direction, bool isJump)
     {
        if (isJump)
         Jump();
-
-       if (Mathf.Abs(direction) > 0.01f)
+        
+        if (Mathf.Abs(direction) > 0.01f)
         {
-            HorizontalMovement(direction);            
-        }        
+            HorizontalMovement(direction);
+            Rotation(direction);
+        }
     }
 
     private void Jump()
     {
-        if (_isGrounded) 
+        if (_groundChecker.IsGrounded) 
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpPower);
     }
 
     private void HorizontalMovement(float direction)
     {
         _rb.linearVelocity = new Vector2(-_curve.Evaluate(direction), _rb.linearVelocity.y);
-    }
-
-    private void OnDrawGizmos()
+    } 
+    
+    private void Rotation(float direction)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_groundCheck.position, _checkRadius);
+        Direction = Mathf.Sign(direction);        
+
+        if (Direction > 0)
+        {
+            _rb.rotation = Quaternion.Euler(0, 0, 0);            
+
+        }
+        else if (Direction < 0)
+        {
+            _rb.rotation = Quaternion.Euler(0, 180, 0);             
+        }
     }
 }
