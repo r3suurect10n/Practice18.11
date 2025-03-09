@@ -22,10 +22,10 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DamagePlayer(Health health)
     {
-        while (true)
+        while (health.CurrrentHealth > 0)
         {
             health.TakeDamage(_damagePlayer);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(_damageInterval);
         }
     }
 }

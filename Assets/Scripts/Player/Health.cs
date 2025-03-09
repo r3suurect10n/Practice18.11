@@ -3,24 +3,25 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private PlayerUI _playerUI;
-    [SerializeField] private float _maxHealthPoints;
-    private float _currentHealth;   
+    [SerializeField] private float _maxHealthPoints;     
     
+    public float CurrrentHealth { get; private set; }
+
     private void Awake()
     {
-        _currentHealth = _maxHealthPoints;        
+        CurrrentHealth = _maxHealthPoints;        
     }  
 
     public void TakeDamage(float damage)
     {
-        _currentHealth -= damage;
-        _playerUI.UpdateUI(_currentHealth);
+        CurrrentHealth -= damage;
+        _playerUI.UpdateHealth(CurrrentHealth);
         CheckIsAlive();
     }    
 
     private void CheckIsAlive()
     {
-        if (_currentHealth <= 0)
+        if (CurrrentHealth <= 0)
             Destroy(gameObject);
     }    
 }

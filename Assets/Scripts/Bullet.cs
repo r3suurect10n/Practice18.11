@@ -12,5 +12,11 @@ public class Bullet : MonoBehaviour
     public void Initialize(float firePower, float direction)
     {
         currentBulletVelocity.linearVelocity = new Vector2(firePower * Mathf.Sign(direction), currentBulletVelocity.linearVelocity.y);
-    }           
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Coin>())
+            Debug.Log("Попал в монетку");
+    }
 }
