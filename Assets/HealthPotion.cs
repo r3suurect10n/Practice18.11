@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HealthPotion : MonoBehaviour
 {
-    private Coroutine 
+    /*private Coroutine 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,5 +13,5 @@ public class HealthPotion : MonoBehaviour
         {
 
         }
-    }
+    }*/
 }

@@ -13,6 +13,10 @@ public class PlayerUI : MonoBehaviour
     {
         _health = GetComponent<Health>();
         _coinCollector = GetComponent<CoinCollector>();
+    }
+
+    private void Start()
+    {
 
         _hpUI.text = _health.CurrrentHealth.ToString();
         _coinsCountUI.text = _coinCollector.CoinsCount.ToString();

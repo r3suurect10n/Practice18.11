@@ -34,8 +34,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (_groundChecker.IsGrounded) 
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpPower);
+        if (_groundChecker.IsGrounded)             
+            _rb.AddForce(Vector3.up * Mathf.Sqrt(_jumpPower * -2f * Physics.gravity.y), ForceMode.VelocityChange);
+            //_rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpPower);
     }
 
     private void HorizontalMovement(float direction)
