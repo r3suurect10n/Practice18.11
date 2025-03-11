@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1160668687341232807}
   - component: {fileID: 2632213098013408828}
   - component: {fileID: 6488864789796485444}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 98998584237922947}
   - component: {fileID: 8361085998992056293}
   - component: {fileID: 2130384992475886473}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: coin (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6892232844440235036, guid: 7cfd596a0bcb72548bc0f981962c867a, type: 3}
+  - {fileID: 2100000, guid: 5ab99e765802612479af338d476e1bea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
