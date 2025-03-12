@@ -5,13 +5,13 @@ public class CoinCollector : MonoBehaviour
 {
     [SerializeField] PlayerUI _playerUI;
 
-    private int _coinsAmount;
-    public int CoinsCount { get; private set; }
+    public int CoinsAmount { get; private set; }
+    public int CoinsCount { get; private set; }    
 
     private void Start()
     {
         CoinsCount = 0;
-        Debug.Log(CoinsAmount());
+        CoinsAmount = CoinsOnScene();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +24,9 @@ public class CoinCollector : MonoBehaviour
         }
     }
 
-    private int CoinsAmount()
+    private int CoinsOnScene()
     {
-        return _coinsAmount = GetComponents<Coin>().Length;
+        GameObject[] coins = GameObject.FindGameObjectsWithTag("Collectable");
+        return coins.Length;
     }
 }

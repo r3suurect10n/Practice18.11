@@ -19,7 +19,7 @@ public class PlayerUI : MonoBehaviour
     {
 
         _hpUI.text = _health.CurrrentHealth.ToString();
-        _coinsCountUI.text = _coinCollector.CoinsCount.ToString();
+        _coinsCountUI.text = $"{_coinCollector.CoinsCount} / {_coinCollector.CoinsAmount}";
     }
 
     public void UpdateHealth (float currentHealth)
@@ -28,7 +28,7 @@ public class PlayerUI : MonoBehaviour
     }
 
     public void UpdateCoinCounter(float currentCoins)
-    {        
-        _coinsCountUI.text = currentCoins.ToString();
+    {
+        _coinsCountUI.text = $"{currentCoins} / {_coinCollector.CoinsAmount}";
     }
 }
