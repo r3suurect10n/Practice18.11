@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField] private GameObject _hpPanel;
+    [SerializeField] private GameObject _coinsPanel;
+
     [SerializeField] private Text _hpUI;
     [SerializeField] private Text _coinsCountUI;
 
@@ -17,7 +20,6 @@ public class PlayerUI : MonoBehaviour
 
     private void Start()
     {
-
         _hpUI.text = _health.CurrrentHealth.ToString();
         _coinsCountUI.text = $"{_coinCollector.CoinsCount} / {_coinCollector.CoinsAmount}";
     }
@@ -30,5 +32,11 @@ public class PlayerUI : MonoBehaviour
     public void UpdateCoinCounter(float currentCoins)
     {
         _coinsCountUI.text = $"{currentCoins} / {_coinCollector.CoinsAmount}";
+    }
+
+    public void HideUI()
+    {
+        _hpPanel.SetActive(false);
+        _coinsPanel.SetActive(false);
     }
 }

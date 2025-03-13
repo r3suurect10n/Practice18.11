@@ -122,10 +122,11 @@ GameObject:
   - component: {fileID: 2300409094163416162}
   - component: {fileID: 5585460592792950651}
   - component: {fileID: 1604416932601847117}
-  - component: {fileID: 5394751586691637715}
   - component: {fileID: 9119078923130397662}
-  - component: {fileID: 692241238340929828}
   - component: {fileID: 281343946716210661}
+  - component: {fileID: 5394751586691637715}
+  - component: {fileID: 692241238340929828}
+  - component: {fileID: 7841138652176686437}
   m_Layer: 0
   m_Name: spikes
   m_TagString: Damagable
@@ -222,20 +223,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2, y: 2.0000005, z: 2.2000003}
   m_Center: {x: 0, y: 0.99999994, z: 0.0000004172325}
---- !u!114 &5394751586691637715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100802802970165959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d291217804ffc664dbe93bfcebbf1330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damagePlayer: 25
-  _damageInterval: 2
 --- !u!54 &9119078923130397662
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -263,19 +250,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &692241238340929828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100802802970165959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7f6531b11e53814c89f210253f19733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyMaxHealthPoints: 50
 --- !u!95 &281343946716210661
 Animator:
   serializedVersion: 7
@@ -298,3 +272,44 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5394751586691637715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100802802970165959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d291217804ffc664dbe93bfcebbf1330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damagePlayer: 25
+  _damageInterval: 2
+--- !u!114 &692241238340929828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100802802970165959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7f6531b11e53814c89f210253f19733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 0}
+  _enemyMaxHealthPoints: 50
+  _finalDoor: {fileID: 0}
+--- !u!114 &7841138652176686437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100802802970165959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c819da0df89808f47b5c0d3ef57388a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
